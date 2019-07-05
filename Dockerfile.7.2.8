@@ -1,0 +1,4 @@
+FROM alpine-pgbase
+ENV PGDATA=/var/lib/postgresql/data PATH=/postgres/7.2.8/bin:/usr/bin:/bin:/sbin:/usr/sbin LANG=ko_KR.UTF-8 LC_COLLATE=C
+ADD postgresql-7.2.8-alpine.tar.gz /postgres/
+ENTRYPOINT ["/entrypoint.sh", "-E", "unicode"]

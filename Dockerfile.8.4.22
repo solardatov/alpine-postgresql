@@ -1,0 +1,5 @@
+FROM alpine-pgbase
+ENV PGDATA=/var/lib/postgresql/data PATH=/postgres/8.4.22/bin:/usr/bin:/bin:/sbin:/usr/sbin LANG=ko_KR.UTF-8 LC_COLLATE=C
+ADD postgresql-8.4.22-alpine.tar.gz /postgres/
+ENTRYPOINT ["/entrypoint.sh"]
+RUN sed -i 's/postmaster/postgres/g' /entrypoint.sh
